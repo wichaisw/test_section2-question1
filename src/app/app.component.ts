@@ -1,4 +1,4 @@
-import { Component, ɵɵsetComponentScope } from '@angular/core';
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -36,12 +36,9 @@ export class AppComponent {
   }
 
   isFibonacci(val: number): boolean {    
-    if(isPerfectSquare(5 * val * val + 4) || isPerfectSquare(5 * val * val - 4)) {
-      return true;
-    }
+    if(isPerfectSquare(5 * val * val + 4) || isPerfectSquare(5 * val * val - 4)) return true;
 
     function isPerfectSquare(n: number) {
-      
       let s: number = Math.floor(Math.sqrt(n));
       return (s**2 === n);
     }     
